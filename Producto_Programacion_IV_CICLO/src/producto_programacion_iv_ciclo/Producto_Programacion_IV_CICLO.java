@@ -9,7 +9,7 @@ public class Producto_Programacion_IV_CICLO {
         int edad;
         double altura;
         double peso;
-        // TODO code application logic here
+        String color_piel;
     }
     
 }
