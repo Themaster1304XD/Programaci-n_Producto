@@ -8,9 +8,9 @@ public class Merma {
     public Merma(int codigo, String fecha, int cantidad, Producto producto, String motivoRechazo) {
         this.codigo=codigo;
         this.fecha=fecha;
-        this.cantidad=cantidad;
-        this.producto=producto;
-        this.motivoRechazo=motivoRechazo;
+        setCantidad(cantidad);
+        setProducto(producto);
+        setMotivoRechazo(motivoRechazo);
     }
     public int getCodigo(){
         return codigo;
@@ -21,10 +21,13 @@ public class Merma {
     public String getFecha(){
         return fecha;
     }
+    public void setFecha(String fecha){
+        this.fecha = fecha;
+    }
     public int getCantidad(){
         return cantidad;
     }
-    public void setCantida(int cantidad) {
+    public void setCantidad(int cantidad) {
         if (cantidad <=0) {
              throw new IllegalArgumentException("La cantidad debe ser mayor a 0");
         }
