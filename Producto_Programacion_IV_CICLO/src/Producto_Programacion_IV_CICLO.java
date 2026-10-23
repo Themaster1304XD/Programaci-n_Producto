@@ -33,6 +33,13 @@ public class Producto_Programacion_IV_CICLO {
         System.out.println("\n REGISTRANDO VENTA (SALIDA)");
         SalidaInventario salida = new SalidaInventario(201, huevos, 2, "23/10/2026");
         salida.ejecutarSalida();
+        
+        //Caso 3: Se encuentra mercadería dañada (Merma)
+        System.out.println("\n REGISTRANDO MERMA");
+        Merma mermaHuevos = new Merma(301, "23/10/2026", 1, huevos, "Huevos rotos en el mostrador");
+        mermaHuevos.apartarProducto();
+        huevos.setStock(huevos.getStock() - mermaHuevos.getCantidad()); 
+        System.out.println("Motivo del descarte: " + mermaHuevos.getMotivoRechazo());
     }
     
 }
