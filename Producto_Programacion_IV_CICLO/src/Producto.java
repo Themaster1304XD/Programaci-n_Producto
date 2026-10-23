@@ -3,34 +3,25 @@ public class Producto {
     private String nombre;
     private String descripcion;
     private String unidad; 
-    private int stock; //puede peertenecer a inventario
-    private String estado; //se puede implementar con enum 
+    private int stock;
+    private String estado;
     private double precioCompra;
     private double precioVenta;
     
     public Producto(int codigo, String nombre, String descripcion, String unidad, int stock, String estado, double precioCompra, double precioVenta){
-        
-        if (nombre == null || nombre == "") throw new IllegalArgumentException("el nombre no puede estar vacio");
-        if (stock < 0) throw new IllegalArgumentException("el stock no puede ser negativo");
-        if (precioCompra < 0 || precioVenta < 0) throw new IllegalArgumentException("el precio no puede ser negativo");
-       
         this.codigo = codigo;
-        this.nombre = nombre;
-        this.descripcion = descripcion;
-        this.unidad = unidad;
-        this.stock = stock;
-        this.estado = estado;
-        this.precioCompra = precioCompra;
-        this.precioVenta = precioVenta;
+        setNombre(nombre);
+        setDescripcion(descripcion);
+        setUnidad(unidad);
+        setStock(stock);
+        setEstado(estado);
+        setPrecioCompra(precioCompra);
+        setPrecioVenta(precioVenta);
     }
 
     public int getCodigo() {
         return codigo;
     }
-//  si se considera modificable el codigo
-//    public void setCodigo(int codigo) {
-//        this.codigo = codigo;
-//    }
 
     public String getNombre() {
         return nombre;
