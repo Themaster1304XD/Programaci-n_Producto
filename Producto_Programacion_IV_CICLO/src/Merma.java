@@ -46,7 +46,10 @@ public class Merma {
          return motivoRechazo;
      }
      public void setMotivoRechazo(String motivoRechazo){
-         this.motivoRechazo=motivoRechazo;
+        if(motivoRechazo == null || motivoRechazo.trim().isEmpty()){
+            throw new IllegalArgumentException("El motivo de rechazo no puede estar vacio");
+        }
+        this.motivoRechazo = motivoRechazo;
      }
      public void apartarProducto(){
          if (producto!=null){
