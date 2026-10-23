@@ -19,7 +19,15 @@ public class Producto_Programacion_IV_CICLO {
         miInventario.registrarProducto(fideos);
         miInventario.registrarProducto(huevos);
         
+        
+        System.out.println("\n INVENTARIO INICIAL");
         miInventario.mostrarInventario();
+        
+        //Caso 1: Entrada de mercaderia (entrada de fideos)
+        System.out.println("\n REGISTRANDO ENTRADA DE MERCADERIA");
+        EntradaInventario entrada = new EntradaInventario(101, "23/10/2026", 10, fideos, provLocal, "Optimo");
+        fideos.setStock(fideos.getStock() + entrada.getCantidad());
+        System.out.println("Se ingresaron " + entrada.getCantidad() + " unidades de " + fideos.getNombre());
     }
     
 }
