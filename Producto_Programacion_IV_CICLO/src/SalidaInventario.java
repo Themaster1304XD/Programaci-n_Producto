@@ -1,12 +1,20 @@
 public class SalidaInventario {
+    private int codigo;
     private Producto producto;
     private int cantidad;
     private String fecha;
     
-    public SalidaInventario(Producto producto, int cantidad, String fecha){
+    public SalidaInventario(int codigo, Producto producto, int cantidad, String fecha){
+        this.codigo = codigo;
         setProducto(producto);
         setCantidad(cantidad);
         setFecha(fecha);
+    }
+    public int getCodigo() {
+        return codigo;
+    }
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
     }
     public void ejecutarSalida(){
         if(this.cantidad>producto.getStock()){
@@ -16,7 +24,7 @@ public class SalidaInventario {
         producto.setStock(nuevoStock);
         System.out.println("Salida de inventario exitosa");
         System.out.println("Producto: "+producto.getNombre());
-        System.out.println("Cantida retirada: "+this.cantidad);
+        System.out.println("Cantidad retirada: "+this.cantidad);
     }
     public Producto getProducto(){
         return producto;
@@ -45,7 +53,7 @@ public class SalidaInventario {
     
     public void setFecha(String fecha){
         if(fecha==null || fecha.isEmpty()){
-            throw new IllegalArgumentException("La fecha no puede estar vacía.");
+            throw new IllegalArgumentException("La fecha no puede estar vacia.");
         }
         this.fecha=fecha;
     }
