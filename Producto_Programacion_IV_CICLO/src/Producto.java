@@ -91,4 +91,18 @@ public class Producto {
         this.precioVenta = precioVenta;
     }
     
+    public void mostrarDatos() {
+        System.out.println(
+            "Producto{" +
+            "codigo=" + codigo +
+            ", nombre='" + nombre + '\'' +
+            ", descripcion='" + descripcion + '\'' +
+            ", unidad='" + unidad + '\'' +
+            ", stock=" + stock +
+            ", estado='" + estado + '\'' +
+            ", precioCompra=" + precioCompra +
+            ", precioVenta=" + precioVenta +
+            "}"
+        );
+    }
 }
