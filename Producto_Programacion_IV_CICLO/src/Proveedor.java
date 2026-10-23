@@ -64,16 +64,16 @@ public class Proveedor {
     
     public void setDireccion(String direccion){
         if(direccion == null || direccion.trim().isEmpty()){
-            throw new IllegalArgumentException("Debe ingresar su dirección.");
+            throw new IllegalArgumentException("Debe ingresar su direccion.");
         }
         this.direccion = direccion;
     }
     
     public void mostrarDatos(){
-        System.out.println("Código: " + codigo);
+        System.out.println("Codigo: " + codigo);
         System.out.println("Empresa: " + nombreEmpresa);
         System.out.println("RUC: " + ruc);
         System.out.println("Telefono: " + telefono);
-        System.out.println("Dirección: " + direccion);
+        System.out.println("Direccion: " + direccion);
     }
 }
