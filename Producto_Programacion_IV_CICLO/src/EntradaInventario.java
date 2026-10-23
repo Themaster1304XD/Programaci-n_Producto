@@ -44,6 +44,9 @@ public class EntradaInventario {
         }
         this.producto=producto;
     }
+    public Proveedor getProveedor(){
+        return proveedor;
+    }
     public void setProveedor(Proveedor proveedor) {
         if (proveedor == null) {
              throw new IllegalArgumentException("Proveedor vacío");
@@ -54,6 +57,10 @@ public class EntradaInventario {
         return estadoVerificado;
     }
     public void setEstadoVerificado(String estadoVerificado) {
-        this.estadoVerificado=estadoVerificado;
+    if(estadoVerificado.equals("Optimo") || estadoVerificado.equals("Defectuoso") || estadoVerificado.equals("Merma")) {
+        this.estadoVerificado = estadoVerificado;
+    } else {
+        throw new IllegalArgumentException("Estado no valido. Use: Optimo, Defectuoso o Merma");
+    }
     }
 }
