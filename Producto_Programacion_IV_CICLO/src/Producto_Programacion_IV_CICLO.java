@@ -10,9 +10,16 @@ public class Producto_Programacion_IV_CICLO {
         System.out.println(" ");
         
         Inventario miInventario = new Inventario();
+        
         Proveedor provLocal = new Proveedor("P001", "Distribuidora del Norte", "10203040501", "987654321", "Av. Pacifico");
+        
         Producto fideos = new Producto(1, "Fideos Anita", "Paquete 500g", "Paquete", 50, "Optimo", 2.50, 3.50);
         Producto huevos = new Producto(2, "Huevos La Calera", "Plancha x30", "Plancha", 20, "Optimo", 12.00, 15.00);
+        
+        miInventario.registrarProducto(fideos);
+        miInventario.registrarProducto(huevos);
+        
+        miInventario.mostrarInventario();
     }
     
 }
