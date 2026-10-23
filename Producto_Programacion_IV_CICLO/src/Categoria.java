@@ -37,7 +37,7 @@ public class Categoria {
     }
         
     public void setDescripcion(String descripcion){
-        if(descripcion == null){
+        if(descripcion == null || descripcion.trim().isEmpty()){
             throw new IllegalArgumentException("La descripcion no puede estar vacia.");
         }
         this.descripcion = descripcion;
