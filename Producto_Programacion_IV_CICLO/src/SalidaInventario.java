@@ -8,7 +8,16 @@ public class SalidaInventario {
         setCantidad(cantidad);
         setFecha(fecha);
     }
-    
+    public void ejecutarSalida(){
+        if(this.cantidad>producto.getStock()){
+            throw new IllegalArgumentException("Error: Cantidad solicitada supera el stock disponible");
+        }
+        int nuevoStock=producto.getStock()-this.cantidad;
+        producto.setStock(nuevoStock);
+        System.out.println("Salida de inventario exitosa");
+        System.out.println("Producto: "+producto.getNombre());
+        System.out.println("Cantida retirada: "+this.cantidad);
+    }
     public Producto getProducto(){
         return producto;
     }
