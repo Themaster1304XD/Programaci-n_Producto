@@ -28,6 +28,11 @@ public class Producto_Programacion_IV_CICLO {
         EntradaInventario entrada = new EntradaInventario(101, "23/10/2026", 10, fideos, provLocal, "Optimo");
         fideos.setStock(fideos.getStock() + entrada.getCantidad());
         System.out.println("Se ingresaron " + entrada.getCantidad() + " unidades de " + fideos.getNombre());
+        
+        //CASO 2: Un cliente compra huevos (Salida de stock)
+        System.out.println("\n REGISTRANDO VENTA (SALIDA)");
+        SalidaInventario salida = new SalidaInventario(201, huevos, 2, "23/10/2026");
+        salida.ejecutarSalida();
     }
     
 }
