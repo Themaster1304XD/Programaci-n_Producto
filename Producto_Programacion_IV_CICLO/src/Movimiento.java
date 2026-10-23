@@ -20,7 +20,9 @@ public class Movimiento {
     }
 
     public void setFecha(String fecha) {
-        this.fecha = fecha;
+        if(fecha == null || fecha.trim().isEmpty()){
+            throw new IllegalArgumentException("La fecha no puede estar vacia");
+        }
     }
 
     public int getCantidad() {
@@ -28,7 +30,9 @@ public class Movimiento {
     }
 
     public void setCantidad(int cantidad) {
-        if (cantidad < 0) throw new IllegalArgumentException("la cantidad no puede ser negativa");
+        if (cantidad <= 0){
+            throw new IllegalArgumentException("la cantidad no puede ser negativa");
+        }  
         this.cantidad = cantidad;
     }
 
@@ -37,7 +41,9 @@ public class Movimiento {
     }
 
     public void setProducto(Producto producto) {
-        this.producto = producto;
+        if(producto == null){
+            throw new IllegalArgumentException("El producto no puede ser nulo");
+        }
+        this.producto = producto; 
     }
-    
 }
