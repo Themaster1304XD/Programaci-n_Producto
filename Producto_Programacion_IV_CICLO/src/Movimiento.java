@@ -1,10 +1,11 @@
 public abstract class Movimiento { //puede no ser abstract si se necesita instanciar objetos
     private int codigo; 
     private String fecha;//se puede implementar con LocalDate
-    private int cantidad;//pasitiva o negativa por eso no hay validacion
+    private int cantidad;
     private Producto producto;
     
     public Movimiento (int codigo, String fecha, int cantidad, Producto producto){
+        if (cantidad < 0) throw new IllegalArgumentException("la cantidad no puede ser negativa");
         this.codigo = codigo;
         this.fecha = fecha;
         this.cantidad = cantidad;
@@ -30,6 +31,7 @@ public abstract class Movimiento { //puede no ser abstract si se necesita instan
     }
 
     public void setCantidad(int cantidad) {
+        if (cantidad < 0) throw new IllegalArgumentException("la cantidad no puede ser negativa");
         this.cantidad = cantidad;
     }
 
