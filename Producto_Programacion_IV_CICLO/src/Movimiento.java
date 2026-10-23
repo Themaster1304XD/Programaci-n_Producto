@@ -1,19 +1,16 @@
-public abstract class Movimiento { //puede no ser abstract si se necesita instanciar objetos
+public class Movimiento {
     private int codigo; 
-    private String fecha;//se puede implementar con LocalDate
+    private String fecha;
     private int cantidad;
     private Producto producto;
     
     public Movimiento (int codigo, String fecha, int cantidad, Producto producto){
-        if (cantidad < 0) throw new IllegalArgumentException("la cantidad no puede ser negativa");
         this.codigo = codigo;
-        this.fecha = fecha;
-        this.cantidad = cantidad;
-        this.producto = producto;
+        setFecha(fecha);
+        setCantidad(cantidad);
+        setProducto(producto);
     }
-    
-    //asumiendo codigo no modificable
-    
+        
     public int getCodigo() {
         return codigo;
     }
