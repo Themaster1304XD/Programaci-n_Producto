@@ -40,6 +40,9 @@ public class Producto_Programacion_IV_CICLO {
         mermaHuevos.apartarProducto();
         huevos.setStock(huevos.getStock() - mermaHuevos.getCantidad()); 
         System.out.println("Motivo del descarte: " + mermaHuevos.getMotivoRechazo());
+        
+        System.out.println("\n INVENTARIO FINAL AL CIERRE DEL DIA ");
+        miInventario.mostrarInventario();
     }
     
 }
