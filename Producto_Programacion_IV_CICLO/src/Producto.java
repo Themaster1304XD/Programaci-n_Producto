@@ -22,13 +22,19 @@ public class Producto {
     public int getCodigo() {
         return codigo;
     }
-
+    
+    public void setCodigo(int codigo){
+        this.codigo = codigo;
+    }
+    
     public String getNombre() {
         return nombre;
     }
     
     public void setNombre(String nombre) {
-        if (nombre == null || nombre == "") throw new IllegalArgumentException("el nombre no puede estar vacio");
+        if (nombre == null || nombre.trim().isEmpty()){ 
+            throw new IllegalArgumentException("El nombre no puede estar vacio");
+        }
         this.nombre = nombre;
     }
 
@@ -37,6 +43,9 @@ public class Producto {
     }
 
     public void setDescripcion(String descripcion) {
+        if (descripcion == null || descripcion.trim().isEmpty()) {
+            throw new IllegalArgumentException("La descripcion no puede estar vacia");
+        }
         this.descripcion = descripcion;
     }
     
@@ -53,6 +62,9 @@ public class Producto {
     }
 
     public void setStock(int stock) {
+        if (stock < 0) {
+            throw new IllegalArgumentException("El stock no puede ser negativo");
+        }
         this.stock = stock;
     }
 
@@ -69,7 +81,9 @@ public class Producto {
     }
 
     public void setPrecioCompra(double precioCompra) {
-        if (precioCompra < 0) throw new IllegalArgumentException("el precio no puede ser negativo");
+        if (precioCompra < 0) {
+            throw new IllegalArgumentException("El precio de compra no puede ser negativo");
+        }
         this.precioCompra = precioCompra;
     }
 
@@ -78,22 +92,20 @@ public class Producto {
     }
 
     public void setPrecioVenta(double precioVenta) {
-        if (precioVenta < 0) throw new IllegalArgumentException("el precio no puede ser negativo");
+        if (precioVenta < 0) {
+            throw new IllegalArgumentException("El precio de venta no puede ser negativo");
+        }
         this.precioVenta = precioVenta;
     }
     
     public void mostrarDatos() {
-        System.out.println(
-            "Producto{" +
-            "codigo=" + codigo +
-            ", nombre='" + nombre + '\'' +
-            ", descripcion='" + descripcion + '\'' +
-            ", unidad='" + unidad + '\'' +
-            ", stock=" + stock +
-            ", estado='" + estado + '\'' +
-            ", precioCompra=" + precioCompra +
-            ", precioVenta=" + precioVenta +
-            "}"
-        );
+        System.out.println("Codigo: " + codigo);
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Descripcion: " + descripcion);
+        System.out.println("Unidad: " + unidad);
+        System.out.println("Stock: " + stock);
+        System.out.println("Estado: " + estado);
+        System.out.println("Precio Compra: S/ " + precioCompra);
+        System.out.println("Precio Venta: S/ " + precioVenta);
     }
 }
