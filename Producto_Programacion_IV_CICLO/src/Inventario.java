@@ -29,5 +29,28 @@ public class Inventario {
         return null;
     }
     
+    public void mostrarInventario(){
+        if(listaProducto.isEmpty()){
+            System.out.println("El inventario esta vacio");
+        } else{
+            System.out.println("LISTA DE INVENTARIO");
+            for(Producto produc: listaProducto){
+                System.out.println("Codigo: "+produc.getCodigo());
+                System.out.println("Nombre: "+produc.getNombre());
+                System.out.println("Stock: "+produc.getStock());
+            }
+        }
+    }
+    
+    public ArrayList<Producto> getListaProducto(){
+        return listaProducto;
+    }
+    
+    public void setListaProducto(ArrayList<Producto> listaProducto){
+        if(listaProducto==null){
+            throw new IllegalArgumentException("Lista de productos nula");
+        }
+        this.listaProducto=listaProducto;
+    }
 }
 
