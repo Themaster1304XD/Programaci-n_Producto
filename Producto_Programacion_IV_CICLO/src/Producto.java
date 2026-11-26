@@ -7,6 +7,7 @@ public class Producto {
     private String estado;
     private double precioCompra;
     private double precioVenta;
+    private Categoria categoria;
     
     public Producto(int codigo, String nombre, String descripcion, String unidad, int stock, String estado, double precioCompra, double precioVenta){
         this.codigo = codigo;
@@ -96,6 +97,14 @@ public class Producto {
             throw new IllegalArgumentException("El precio de venta no puede ser negativo");
         }
         this.precioVenta = precioVenta;
+    }
+    
+    public Categoria getCategoria(){
+        return categoria;
+    }
+    
+    public void setCategoria(Categoria categoria){
+        this.categoria = categoria;
     }
     
     public void mostrarDatos() {
