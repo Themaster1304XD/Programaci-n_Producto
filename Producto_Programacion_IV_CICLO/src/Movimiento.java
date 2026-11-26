@@ -1,8 +1,8 @@
 public class Movimiento {
-    private int codigo; 
-    private String fecha;
-    private int cantidad;
-    private Producto producto;
+    protected int codigo; 
+    protected String fecha;
+    protected int cantidad;
+    protected Producto producto;
     
     public Movimiento (int codigo, String fecha, int cantidad, Producto producto){
         this.codigo = codigo;
@@ -27,6 +27,7 @@ public class Movimiento {
         if(fecha == null || fecha.trim().isEmpty()){
             throw new IllegalArgumentException("La fecha no puede estar vacia");
         }
+        this.fecha = fecha;
     }
 
     public int getCantidad() {
@@ -49,5 +50,10 @@ public class Movimiento {
             throw new IllegalArgumentException("El producto no puede ser nulo");
         }
         this.producto = producto; 
+    }
+    
+    public void mostrarDatos(){
+        System.out.println("Movimiento #" + codigo + " | Fecha: " + fecha + 
+                " | Producto: " + producto.getNombre() + " | Cant: " + cantidad);
     }
 }
