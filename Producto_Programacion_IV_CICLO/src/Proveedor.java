@@ -14,6 +14,11 @@ public class Proveedor {
         setDireccion(direccion);
     }
     
+    public Proveedor(String codigo, String nombreEmpresa, String ruc){
+        setCodigo(codigo);
+        setNombreEmpresa(nombreEmpresa);
+        setRuc(ruc);
+    }
     public String getCodigo(){
         return codigo;
     }
