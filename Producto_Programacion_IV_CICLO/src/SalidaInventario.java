@@ -28,6 +28,12 @@ public class SalidaInventario extends Movimiento {
         System.out.println("Cantidad retirada: "+this.cantidad);
     }
     
+    @Override
+    public void mostrarDatos(){
+        super.mostrarDatos();
+        System.out.println("-> Tipo: Salida");
+        System.out.println("Destino: "+ destino);
+    }
     public String getDestino(){
         return destino;
     }
