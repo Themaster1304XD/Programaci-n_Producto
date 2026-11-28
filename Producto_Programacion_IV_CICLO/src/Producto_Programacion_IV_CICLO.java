@@ -30,7 +30,7 @@ public class Producto_Programacion_IV_CICLO {
         
         //CASO 2: Un cliente compra huevos (Salida de stock)
         System.out.println("\n REGISTRANDO VENTA (SALIDA)");
-        SalidaInventario salida = new SalidaInventario(201, huevos, 2, "23/10/2026");
+        SalidaInventario salida = new SalidaInventario(201, 2, "23/10/2026", huevos);
         salida.ejecutarSalida();
         
         //Caso 3: Se encuentra mercadería dañada (Merma)
