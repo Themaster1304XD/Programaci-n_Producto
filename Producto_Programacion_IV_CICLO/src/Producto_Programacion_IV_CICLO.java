@@ -24,7 +24,8 @@ public class Producto_Programacion_IV_CICLO {
         //Caso 1: Entrada de mercaderia (entrada de fideos)
         System.out.println("\n REGISTRANDO ENTRADA DE MERCADERIA");
         EntradaInventario entrada = new EntradaInventario(101, "23/10/2026", 10, fideos, provLocal, "Optimo");
-        fideos.setStock(fideos.getStock() + entrada.getCantidad());
+        entrada.procesarEntrada();
+        miInventario.registrarMovimiento(entrada);
         System.out.println("Se ingresaron " + entrada.getCantidad() + " unidades de " + fideos.getNombre());
         
         //CASO 2: Un cliente compra huevos (Salida de stock)
