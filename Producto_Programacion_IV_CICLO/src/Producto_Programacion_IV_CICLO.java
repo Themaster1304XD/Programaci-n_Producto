@@ -32,6 +32,7 @@ public class Producto_Programacion_IV_CICLO {
         System.out.println("\n REGISTRANDO VENTA (SALIDA)");
         SalidaInventario salida = new SalidaInventario(201, 2, "23/10/2026", huevos);
         salida.ejecutarSalida();
+        miInventario.registrarMovimiento(salida);
         
         //Caso 3: Se encuentra mercadería dañada (Merma)
         System.out.println("\n REGISTRANDO MERMA");
